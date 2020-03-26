@@ -68,7 +68,11 @@ def output_polys(index_list,string):
         of.write(string+str(index)+".polyrecord"+"\n")
     of.close()
 
+def clear_outputs():
+    if(os.path.exists("./outputs")):
+        shutil.rmtree("./outputs")
+    os.mkdir("./outputs")
 
-show_Poly([0])
+#show_Poly([0])
 #output_ith_poly(2,"poly2.polyrecord")
-#output_polys(range(175),"poly")
+output_polys(range(175),"poly")

@@ -1,8 +1,9 @@
 #include "mixed_mesher2d.h"
 #include "mesh2Dto3D.h"
 #include "Triangle_interface.h"
+#include "Tetra_system.h"
 int main() {
-	
+	/*
 	long N_pad = 5;
 	long Nx = 13 + 2 * N_pad;
 	long Ny = 73 + 2 * N_pad;
@@ -29,8 +30,15 @@ int main() {
 	polyfile.output("./outputs/mixed_ele.poly");
 	
 	grid.output_background_grid("./outputs/background.2dmesh");
-	
+	*/
 	//mesh2Dto3D::Mesh_2d mesh2d("mixed_ele.1.node", "mixed_ele.1.ele");
 	//mesh2d.output_mesh("mixed_ele.2dmesh");
+
+	mesh2Dto3D::Mesh_2d mesh2d("mixed_ele.1.node", "mixed_ele.1.ele");
+	mesh2Dto3D::Mesh_3d mesh3d(mesh2d, 1.3e-5, 1);
+	mesh3d.output("mixed_ele_node.txt", "mixed_ele_ele.txt");
+	Tetra_system::Tetra_domain tdomain("mixed_ele_node.txt", "mixed_ele_ele.txt");
+	cout << "Ne=" << tdomain.get_Ne() << " Nh=" << tdomain.get_Nh() << endl;
+
 	system("pause");
 }

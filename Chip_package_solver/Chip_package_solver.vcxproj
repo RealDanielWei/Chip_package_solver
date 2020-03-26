@@ -123,11 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="basefuncs.cpp" />
+    <ClCompile Include="LinearAlgebra.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tetra_system.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basefuncs.h" />
+    <ClInclude Include="BasicDomain.h" />
+    <ClInclude Include="Brick_system.h" />
+    <ClInclude Include="LinearAlgebra.h" />
     <ClInclude Include="mesh2Dto3D.h" />
     <ClInclude Include="mixed_mesher2d.h" />
+    <ClInclude Include="SparseVector.h" />
+    <ClInclude Include="Tetra_system.h" />
     <ClInclude Include="Triangle_interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
